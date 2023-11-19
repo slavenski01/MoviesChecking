@@ -5,9 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.project.shared.SpaceXSDK
 import com.example.project.shared.cache.DatabaseDriverFactory
 import com.example.project.viewmodel.MainViewModel
@@ -25,10 +23,4 @@ class MainActivity : ComponentActivity() {
             App(launchesList = launches)
         }
     }
-}
-
-@Preview
-@Composable
-fun AppAndroidPreview() {
-    App()
 }
