@@ -25,6 +25,8 @@ coroutines = "1.7.3"
 kotlin-datetime = "0.4.1"
 #moco-resources
 moco-resources-ver = "0.23.0"
+#lifecycle
+android-lifecycle = "2.6.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -69,6 +71,10 @@ moco-resources-common = { module = "dev.icerock.moko:resources", version.ref = "
 moco-resources-common-compose = { module = "dev.icerock.moko:resources-compose", version.ref = "moco-resources-ver" }
 moco-resources-tests = { module = "dev.icerock.moko:resources-test", version.ref = "moco-resources-ver" }
 
+#android-lifecycle
+android-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "android-lifecycle" }
+android-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "android-lifecycle" }
+
 [plugins]
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -82,7 +88,7 @@ sqdelight = { id = "app.cash.sqldelight", version.ref = "sqldelight-version" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 #moco-resource
-moco-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moco-resources-ver"}
+moco-resources = { id = "dev.icerock.mobile.multiplatform-resources", version.ref = "moco-resources-ver" }
 
 [bundles]
 sqldelight-common = [

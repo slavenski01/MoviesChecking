@@ -50,6 +50,10 @@ kotlin {
 
                 //ktor
                 implementation(libs.ktor.client.android)
+
+                //lifecycle
+                implementation(libs.android.lifecycle.viewmodel)
+                implementation(libs.android.lifecycle.runtime.compose)
             }
             dependsOn(commonMain.get())
         }

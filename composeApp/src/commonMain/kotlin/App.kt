@@ -6,8 +6,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -22,10 +20,9 @@ import org.example.library.MR
 
 @Composable
 fun App(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    launchesList: List<RocketLaunch> = listOf()
 ) {
-
-    val launches = remember { mutableStateOf(getMockList()) }
     MaterialTheme {
         Column(
             modifier.fillMaxWidth()
@@ -35,7 +32,7 @@ fun App(
             Text(text = StringDesc.Resource(MR.strings.title).localized())
             LazyColumn {
                 items(
-                    items = launches.value,
+                    items = launchesList,
                     itemContent = {
                         Column(
                             modifier = Modifier.padding(8.dp)
