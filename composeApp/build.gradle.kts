@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
-    alias(libs.plugins.sqdelight)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.moco.resources)
 }
@@ -49,9 +48,6 @@ kotlin {
                 implementation(libs.compose.ui.tooling.preview)
                 implementation(libs.androidx.activity.compose)
 
-                //sqlite
-                implementation(libs.sqlite.android.driver)
-
                 //ktor
                 implementation(libs.ktor.client.android)
             }
@@ -61,9 +57,6 @@ kotlin {
         desktopMain.apply {
             dependencies {
                 implementation(compose.desktop.currentOs)
-
-                //sqlite
-                implementation(libs.sqlite.jvmMain.driver)
 
                 //ktor
                 implementation(libs.ktor.client.core)
@@ -83,9 +76,6 @@ kotlin {
         }
         iosMain {
             dependencies {
-                //sqlite
-                implementation(libs.sqlite.iosMain.driver)
-
                 //ktor
                 implementation(libs.ktor.client.ios)
             }
@@ -97,9 +87,6 @@ kotlin {
             implementation(compose.material)
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
-
-            //sqlite
-            implementation(libs.bundles.sqldelight.common)
 
             //ktor
             implementation(libs.ktor.client.core)
@@ -116,6 +103,8 @@ kotlin {
             api(libs.moco.resources.common)
             api(libs.moco.resources.common.compose)
             api(libs.moco.resources.tests)
+
+            implementation(project(":shared"))
         }
 
         multiplatformResources {
@@ -173,11 +162,5 @@ compose.desktop {
             packageName = "com.example.project"
             packageVersion = "1.0.0"
         }
-    }
-}
-
-sqldelight {
-    databases.create("AppDatabase") {
-        packageName.set("com.example.shared.cache")
     }
 }
