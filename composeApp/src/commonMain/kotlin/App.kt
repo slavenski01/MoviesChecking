@@ -10,7 +10,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.project.shared.entity.Links
 import com.example.project.shared.entity.RocketLaunch
 import dev.icerock.moko.resources.compose.localized
 import dev.icerock.moko.resources.desc.Resource
@@ -63,14 +62,3 @@ fun App(
         }
     }
 }
-
-fun getMockList() = listOf(
-    RocketLaunch(
-        flightNumber = 10,
-        missionName = "123",
-        launchDateUTC = "111",
-        details = "12312312313",
-        launchSuccess = true,
-        links = Links(patch = null, article = null)
-    )
-)
