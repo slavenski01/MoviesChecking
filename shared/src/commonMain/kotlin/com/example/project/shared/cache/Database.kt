@@ -5,7 +5,7 @@ import com.example.project.shared.entity.Patch
 import com.example.project.shared.entity.RocketLaunch
 import com.example.shared.cache.db.MoviesDatabase
 
-internal class Database(
+class Database(
     databaseDriverFactory: DatabaseDriverFactory
 ) {
     private val database = MoviesDatabase(databaseDriverFactory.createDriver())
